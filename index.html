@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Save the Aunty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;600;700&display=swap');
+      body {
+        font-family: 'Quicksand', sans-serif;
+        overflow: hidden;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: none;
+        background-color: #5c94fc;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .font-pixel {
+        font-family: 'Press Start 2P', cursive;
+      }
+      canvas {
+        touch-action: none;
+      }
+      .mario-border {
+        box-shadow: 
+          inset -4px -4px 0px 0px #000,
+          inset 4px 4px 0px 0px #fff,
+          0px 0px 0px 4px #000;
+      }
+      .mario-btn {
+        box-shadow: 0 6px 0 #8b4513;
+        transition: all 0.1s;
+      }
+      .mario-btn:active {
+        box-shadow: 0 2px 0 #8b4513;
+        transform: translateY(4px);
+      }
+      /* Hide scrollbars for mobile */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-[#5c94fc]">
+    <div id="root"></div>
+    <script>
+      // Simple utility to help mobile users go fullscreen
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('.mario-btn') && !document.fullscreenElement) {
+          // Attempting fullscreen on interaction for better mobile experience
+          // document.documentElement.requestFullscreen().catch(() => {});
+        }
+      });
+    </script>
+  </body>
+</html>
